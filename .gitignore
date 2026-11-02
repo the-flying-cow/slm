@@ -1,0 +1,10 @@
+checkpoints/*
+!checkpoints/.gitkeep
+.slm_venv/
+venv/
+.venv/
+data/*
+!data/.gitkeep
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints
