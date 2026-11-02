@@ -49,10 +49,10 @@ pip install -r requirements.txt
 
 ### 3. Prepare the dataset
 
-Place the Tiny Shakespeare training text at:
+Run and place the Tiny Shakespeare text at:
 
 ```text
-data/input.txt
+Run in powershell(this puts the dataset in the data/ dir): Invoke-WebRequest -Uri "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt" -OutFile "data\input.txt"
 ```
 
 The tokenizer is generated automatically from the text in this file.
