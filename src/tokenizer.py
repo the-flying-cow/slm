@@ -1,16 +1,14 @@
+import tiktoken
 
-class CharacterTokenizer():
-    def __init__(self, data_path: str):
-        with open(data_path, "r", encoding= "utf-8") as file:
-            text= file.read()
+class BPETokenizer:
 
-        chars= sorted(list(set(text)))
-        self.vocab_size= len(chars)
-        self.stoi= {ch: i for i, ch in enumerate(chars)}
-        self.itos= {i: ch for i, ch in enumerate(chars)}
+    def __init__(self, encoding_name: str= "gpt2"):
+
+        self.enc= tiktoken.get_encoding(encoding_name)
+        self.vocab_size= self.enc.n_vocab
 
     def encode(self, s: str) -> list[int]:
-        return [self.stoi[ch] for ch in s]
+        return self.enc.encode(s, allowed_special= {"<|endoftext|>"})
 
     def decode(self, l: list[int]) -> str:
-        return "".join(self.itos[i] for i in l)
+        return self.enc.decode(l)

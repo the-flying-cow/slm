@@ -1,0 +1,14 @@
+{
+  "vocab_size": 50257,
+  "n_embd": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "block_size": 64,
+  "dropout": 0.1,
+  "batch_size": 16,
+  "learning_rate": 3e-4,
+  "max_steps": 1000,
+  "eval_interval": 200,
+  "eval_iters": 50,
+  "data_path": "data/input.txt"
+}
